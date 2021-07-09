@@ -65,6 +65,7 @@
     <None Include="Assets\Assets\Models\Kenney Blaster Kit\License.txt" />
     <None Include="Assets\Assets\Audio\SFX\INFO.txt" />
     <None Include="Assets\Assets\Audio\Music\INFO.txt" />
+    <None Include="Assets\ProjectSettings\ProjectVersion.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
