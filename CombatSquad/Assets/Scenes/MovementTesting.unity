@@ -1550,3 +1550,9 @@ MonoBehaviour:
   runSpeed: 9
   jumpForce: 8
   gravityMod: 2.5
+  bulletImpact: {fileID: 3422800228285073789, guid: a8b35a96490723e41bc8ecd74507841c, type: 3}
+  timeBetweenShots: 0.1
+  maxHeat: 10
+  heatPerShot: 0.8
+  coolRate: 4
+  overheatCoolRate: 5

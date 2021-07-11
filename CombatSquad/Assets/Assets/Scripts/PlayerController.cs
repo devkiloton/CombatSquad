@@ -14,6 +14,21 @@ public class PlayerController : MonoBehaviour
     private float jumpForce = 5f;
     [SerializeField]
     private float gravityMod = 2.5f;
+    [SerializeField]
+    private GameObject bulletImpact;
+    [SerializeField]
+    private float timeBetweenShots = .1f;
+    [SerializeField]
+    private float maxHeat = 10f;
+    [SerializeField]
+    private float heatPerShot;
+    [SerializeField]
+    private float coolRate = 4f;
+    [SerializeField]
+    private float overheatCoolRate = 5f;
+    private float heatCounter;
+    private bool overHeated;
+    private float shotCounter;
     private float activeMoveSpeed;
     private Transform viewPoint;
     private CharacterController chaCon;
@@ -30,8 +45,8 @@ public class PlayerController : MonoBehaviour
     {
         groundCheckPoint = gameObject.GetComponentInChildren<Transform>().Find("GroundCheckPoint");
         viewPoint = gameObject.GetComponentInChildren<Transform>().Find("ViewPoint");
-        groundLayers = LayerMask.GetMask("Ground");
         chaCon = GetComponent<CharacterController>();
+        groundLayers = LayerMask.GetMask("Ground");
         Cursor.lockState = CursorLockMode.Locked;
         cam = Camera.main;
     }
@@ -70,7 +85,6 @@ public class PlayerController : MonoBehaviour
         }
 
         isGrounded = Physics.Raycast(groundCheckPoint.position, Vector3.down, .25f, groundLayers);
-        //print(isGrounded);
 
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -81,9 +95,35 @@ public class PlayerController : MonoBehaviour
 
         chaCon.Move(movement * Time.deltaTime);
 
-        if (Input.GetButtonDown("Fire1"))
+        if (!overHeated)
         {
-            Shoot();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shoot();
+            }
+
+            if (Input.GetMouseButton(0))
+            {
+                shotCounter -= Time.deltaTime;
+                if (shotCounter <= 0f)
+                {
+                    Shoot();
+                }
+            }
+            heatCounter -= coolRate * Time.deltaTime;
+        }
+        else
+        {
+            heatCounter -= overheatCoolRate * Time.deltaTime;
+            if(heatCounter <= 0f)
+            {
+                overHeated = false;
+            }
+        }
+
+        if(heatCounter < 0f)
+        {
+            heatCounter = 0f;
         }
 
         if (Input.GetKey(KeyCode.Escape))
@@ -104,7 +144,16 @@ public class PlayerController : MonoBehaviour
         ray.origin = cam.transform.position;
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
+            GameObject bulletImpactObj = Instantiate(bulletImpact, hit.point + (hit.normal * 0.002f), Quaternion.LookRotation(hit.normal));
+            Destroy(bulletImpactObj, 10f);
             Debug.Log("we hit" + hit.collider.gameObject.name);
+        }
+        shotCounter = timeBetweenShots;
+        heatCounter += heatPerShot;
+        if(heatCounter >= maxHeat)
+        {
+            heatCounter = maxHeat;
+            overHeated = true;
         }
     }
     private void LateUpdate()
