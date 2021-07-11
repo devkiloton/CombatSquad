@@ -81,16 +81,30 @@ public class PlayerController : MonoBehaviour
 
         chaCon.Move(movement * Time.deltaTime);
 
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Shoot();
+        }
+
         if (Input.GetKey(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
         }
-        else if(Cursor.lockState == CursorLockMode.None)
+        else if (Cursor.lockState == CursorLockMode.None)
         {
             if (Input.GetButtonDown("Fire1"))
             {
                 Cursor.lockState = CursorLockMode.Locked;
             }
+        }
+    }
+    private void Shoot()
+    {
+        Ray ray = cam.ViewportPointToRay(new Vector3(.5f,.5f,0f));
+        ray.origin = cam.transform.position;
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            Debug.Log("we hit" + hit.collider.gameObject.name);
         }
     }
     private void LateUpdate()
