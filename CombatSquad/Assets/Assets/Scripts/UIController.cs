@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
 {
     public TMP_Text overheatedMessage;
     public static UIController Instance;
+    public Slider WeaponTempSlider;
 
     private void Awake()
     {

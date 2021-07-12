@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="Assets\Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Assets\Scripts\UIController.cs" />
+    <Compile Include="Assets\Assets\Scripts\Gun.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
