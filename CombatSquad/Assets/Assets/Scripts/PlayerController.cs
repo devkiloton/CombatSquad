@@ -118,6 +118,7 @@ public class PlayerController : MonoBehaviour
             if(heatCounter <= 0f)
             {
                 overHeated = false;
+                UIController.Instance.overheatedMessage.gameObject.SetActive(false);
             }
         }
 
@@ -146,7 +147,6 @@ public class PlayerController : MonoBehaviour
         {
             GameObject bulletImpactObj = Instantiate(bulletImpact, hit.point + (hit.normal * 0.002f), Quaternion.LookRotation(hit.normal));
             Destroy(bulletImpactObj, 10f);
-            Debug.Log("we hit" + hit.collider.gameObject.name);
         }
         shotCounter = timeBetweenShots;
         heatCounter += heatPerShot;
@@ -154,6 +154,7 @@ public class PlayerController : MonoBehaviour
         {
             heatCounter = maxHeat;
             overHeated = true;
+            UIController.Instance.overheatedMessage.gameObject.SetActive(true);
         }
     }
     private void LateUpdate()
