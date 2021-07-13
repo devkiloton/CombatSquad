@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: 277052893}
   - component: {fileID: 277052896}
   m_Layer: 0
-  m_Name: Gun3_Rifle
+  m_Name: Gun2_Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1110,7 +1110,7 @@ GameObject:
   - component: {fileID: 961704049}
   - component: {fileID: 961704050}
   m_Layer: 0
-  m_Name: Gun1_MachineGun
+  m_Name: Gun0_MachineGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1851,7 +1851,7 @@ GameObject:
   - component: {fileID: 1559402211}
   - component: {fileID: 1559402214}
   m_Layer: 0
-  m_Name: Gun2_Pistol
+  m_Name: Gun1_Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2770,3 +2770,7 @@ MonoBehaviour:
   heatPerShot: 0.8
   coolRate: 4
   overheatCoolRate: 5
+  AllGuns:
+  - {fileID: 961704050}
+  - {fileID: 1559402214}
+  - {fileID: 277052896}

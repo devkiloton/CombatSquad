@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 mouseInput;
     private Vector3 moveDir;
     private Vector3 movement;
+    public Gun[] AllGuns;
+    private int selectedGun;
 
     private void Start()
     {
@@ -50,6 +52,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         cam = Camera.main;
         UIController.Instance.WeaponTempSlider.maxValue = maxHeat;
+        SwitchGun();
     }
 
     private void Update()
@@ -130,6 +133,25 @@ public class PlayerController : MonoBehaviour
 
         UIController.Instance.WeaponTempSlider.value = heatCounter;
 
+        if(Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
+        {
+            selectedGun++;
+            if(selectedGun>= AllGuns.Length)
+            {
+                selectedGun = AllGuns.Length - 1;
+            }
+            SwitchGun();
+        }
+        else if(Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
+        {
+            selectedGun--;
+            if (selectedGun < 0f)
+            {
+                selectedGun = 0;
+            }
+            SwitchGun();
+        }
+
         if (Input.GetKey(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
@@ -164,5 +186,13 @@ public class PlayerController : MonoBehaviour
     {
         cam.transform.position = viewPoint.position;
         cam.transform.rotation = viewPoint.rotation;
+    }
+    private void SwitchGun()
+    {
+        foreach(Gun gun in AllGuns)
+        {
+            gun.gameObject.SetActive(false);
+        }
+        AllGuns[selectedGun].gameObject.SetActive(true);
     }
 }
