@@ -16,12 +16,12 @@ public class PlayerController : MonoBehaviour
     private float gravityMod = 2.5f;
     [SerializeField]
     private GameObject bulletImpact;
-    [SerializeField]
-    private float timeBetweenShots = .1f;
+    //[SerializeField]
+    //private float timeBetweenShots = .1f;
     [SerializeField]
     private float maxHeat = 10f;
-    [SerializeField]
-    private float heatPerShot;
+    //[SerializeField]
+    //private float heatPerShot;
     [SerializeField]
     private float coolRate = 4f;
     [SerializeField]
@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
                 Shoot();
             }
 
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButton(0) && AllGuns[selectedGun].isAutomatic)
             {
                 shotCounter -= Time.deltaTime;
                 if (shotCounter <= 0f)
@@ -173,8 +173,10 @@ public class PlayerController : MonoBehaviour
             GameObject bulletImpactObj = Instantiate(bulletImpact, hit.point + (hit.normal * 0.002f), Quaternion.LookRotation(hit.normal));
             Destroy(bulletImpactObj, 10f);
         }
-        shotCounter = timeBetweenShots;
-        heatCounter += heatPerShot;
+
+        shotCounter = AllGuns[selectedGun].timeBetweenShots;
+        heatCounter += AllGuns[selectedGun].heatPerShot;
+
         if(heatCounter >= maxHeat)
         {
             heatCounter = maxHeat;
