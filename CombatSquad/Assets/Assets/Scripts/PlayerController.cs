@@ -166,6 +166,15 @@ public class PlayerController : MonoBehaviour
             SwitchGun();
         }
 
+        for(int i = 0; i<AllGuns.Length; i++)
+        {
+            if (Input.GetKeyDown((i + 1).ToString()))
+            {
+                selectedGun = i;
+                SwitchGun();
+            }
+        }
+
         if (Input.GetKey(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
