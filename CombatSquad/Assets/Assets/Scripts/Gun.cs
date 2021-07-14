@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    public GameObject gunMuzzleFlashes;
     public bool isAutomatic;
     public float timeBetweenShots = .1f;
     public float heatPerShot = 1f;
