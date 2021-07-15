@@ -335,6 +335,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
 "Assets/Assets/Scripts/Gun.cs"
+"Assets/Assets/Scripts/Launcher.cs"
 "Assets/Assets/Scripts/PlayerController.cs"
 "Assets/Assets/Scripts/SpawnManager.cs"
 "Assets/Assets/Scripts/UIController.cs"
