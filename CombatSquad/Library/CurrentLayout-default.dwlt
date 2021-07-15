@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1440
     height: 809
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 521}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 708, y: 471}
   m_MaxSize: {x: 18003, y: 14021}
   vertical: 0
-  controlID: 17
+  controlID: 18
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 90
+  controlID: 132
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -191,8 +191,8 @@ MonoBehaviour:
     y: 378
     width: 763
     height: 381
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 471}
   m_MaxSize: {x: 10002, y: 14021}
   vertical: 1
-  controlID: 18
+  controlID: 28
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -430,9 +430,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.5795486, y: -3.2416315, z: 24.337132}
+    m_Target: {x: -0.8366035, y: 10.148832, z: 33.477154}
     speed: 2
-    m_Value: {x: 2.5795486, y: -3.2416315, z: 24.337132}
+    m_Value: {x: -0.8366035, y: 10.148832, z: 33.477154}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -479,13 +479,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.5341594, y: 0.20474787, z: -0.13509016, w: -0.8090828}
+    m_Target: {x: 0.16128545, y: -0.013027299, z: 0.0022395838, w: 0.9868964}
     speed: 2
-    m_Value: {x: -0.53412944, y: 0.20473638, z: -0.13508257, w: -0.8090374}
+    m_Value: {x: 0.16127636, y: -0.011546062, z: 0.0019975014, w: 0.9868398}
   m_Size:
-    m_Target: 10
+    m_Target: 29.004349
     speed: 2
-    m_Value: 10
+    m_Value: 27.755358
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -503,8 +503,8 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.119258426, y: 0.08657138, z: -0.010430731, w: -0.98903877}
-  m_LastSceneViewOrtho: 1
+  m_LastSceneViewRotation: {x: -0.0045031933, y: 0.0077825654, z: 0.00013629041, w: 1.0000349}
+  m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
   m_SceneVisActive: 1
@@ -652,9 +652,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: dcc6ffff
-      m_LastClickedID: 0
-      m_ExpandedIDs: 54fbffff
+      m_SelectedIDs: 7eb9ffff
+      m_LastClickedID: -18050
+      m_ExpandedIDs: 86cbffff8cf4ffffeaf4ffff2ef5ffffe6f5ffff50fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -716,22 +716,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Photon/PhotonUnityNetworking/Resources
+    - Assets/Assets/Models/Future City
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Photon/PhotonUnityNetworking/Resources
+  - Assets/Assets/Models/Future City
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\Yarego Brozek\Desktop\GIthub\CombatSquad\CombatSquad
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d87b0000
-    m_LastClickedID: 31704
-    m_ExpandedIDs: 000000004258000044580000425e0000505e0000
+    m_SelectedIDs: 0a5c0000
+    m_LastClickedID: 23562
+    m_ExpandedIDs: 00000000f05a0000f25a0000fe5a0000005b0000165b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -759,7 +759,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004258000044580000
+    m_ExpandedIDs: 00000000f05a0000f25a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
