@@ -7,7 +7,7 @@ using Photon.Realtime;
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
-    public static Launcher launcher;
+    public static Launcher Instance;
     public GameObject LoadingScreen;
     public GameObject MenuButtons;
     public TMP_Text LoadingText;
@@ -24,9 +24,9 @@ public class Launcher : MonoBehaviourPunCallbacks
     public GameObject RoomBrowserScreen;
     public RoomButton TheRoomButton;
     private List<RoomButton> allRoomButtons = new List<RoomButton>();
-    private void Awake()
+    public void Awake()
     {
-        launcher = this;
+        Instance = this;
     }
 
     private void Start()
@@ -147,5 +147,18 @@ public class Launcher : MonoBehaviourPunCallbacks
                 allRoomButtons.Add(newButton);
             }
         }
+    }
+    public void JoinRoom(RoomInfo inputInfo)
+    {
+        PhotonNetwork.JoinRoom(inputInfo.Name);
+
+        CloseMenus();
+        LoadingText.text = "Joining Room";
+        LoadingScreen.SetActive(true);
+    }
+    
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

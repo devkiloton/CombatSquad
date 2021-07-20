@@ -1470,6 +1470,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1628992886}
     m_Modifications:
+    - target: {fileID: 7585364518173972179, guid: ca9ba8e9ac4c42c418a719f241238f8d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 823395118}
+    - target: {fileID: 7585364518173972179, guid: ca9ba8e9ac4c42c418a719f241238f8d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585364518173972179, guid: ca9ba8e9ac4c42c418a719f241238f8d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RoomButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585364518173972179, guid: ca9ba8e9ac4c42c418a719f241238f8d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7585364518173972268, guid: ca9ba8e9ac4c42c418a719f241238f8d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2242,6 +2258,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1657755885}
     m_Modifications:
+    - target: {fileID: 7585364518173972179, guid: ca9ba8e9ac4c42c418a719f241238f8d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 527588553}
+    - target: {fileID: 7585364518173972179, guid: ca9ba8e9ac4c42c418a719f241238f8d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585364518173972179, guid: ca9ba8e9ac4c42c418a719f241238f8d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Launcher, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7585364518173972179, guid: ca9ba8e9ac4c42c418a719f241238f8d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7585364518173972268, guid: ca9ba8e9ac4c42c418a719f241238f8d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

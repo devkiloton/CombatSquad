@@ -14,4 +14,9 @@ public class RoomButton : MonoBehaviour
         info = inputInfo;
         ButtonText.text = info.Name;
     }
+
+    public void OpenRoom()
+    {
+        Launcher.Instance.JoinRoom(info);
+    }
 }
