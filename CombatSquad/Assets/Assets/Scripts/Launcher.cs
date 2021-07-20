@@ -21,6 +21,9 @@ public class Launcher : MonoBehaviourPunCallbacks
     public GameObject ErrorScreen;
     public TMP_Text ErrorText;
 
+    public GameObject RoomBrowserScreen;
+    public RoomButton TheRoomButton;
+    private List<RoomButton> allRoomButtons = new List<RoomButton>();
     private void Awake()
     {
         launcher = this;
@@ -42,6 +45,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         CreateRoomScreen.SetActive(false);
         RoomScreen.SetActive(false);
         ErrorScreen.SetActive(false);
+        RoomBrowserScreen.SetActive(false);
     }
 
     public override void OnConnectedToMaster()
@@ -107,6 +111,16 @@ public class Launcher : MonoBehaviourPunCallbacks
         LoadingScreen.SetActive(true);
     }
     public override void OnLeftRoom()
+    {
+        CloseMenus();
+        MenuButtons.SetActive(true);
+    }
+    public void OpenRoomBrowser()
+    {
+        CloseMenus();
+        RoomBrowserScreen.SetActive(true);
+    }
+    public void CloseRoomBrowser()
     {
         CloseMenus();
         MenuButtons.SetActive(true);
