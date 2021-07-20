@@ -125,4 +125,27 @@ public class Launcher : MonoBehaviourPunCallbacks
         CloseMenus();
         MenuButtons.SetActive(true);
     }
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        foreach(RoomButton rb in allRoomButtons)
+        {
+            Destroy(rb.gameObject);
+        }
+        allRoomButtons.Clear();
+
+        TheRoomButton.gameObject.SetActive(false);
+
+
+        for(int i = 0; i<roomList.Count; i++)
+        {
+            if(roomList[i].PlayerCount != roomList[i].MaxPlayers && !roomList[i].RemovedFromList)
+            {
+                RoomButton newButton = Instantiate(TheRoomButton, TheRoomButton.transform.parent);
+                newButton.SetButtonDetails(roomList[i]);
+                newButton.gameObject.SetActive(true);
+
+                allRoomButtons.Add(newButton);
+            }
+        }
+    }
 }
