@@ -13,8 +13,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -1409,7 +1407,7 @@ ScriptsOnlyBuild:
     className: PingProperty
   - hash:
       serializedVersion: 2
-      Hash: 52ce8583cc195d3bdcda1e23c606eec1
+      Hash: 5acf9b1b8949b3e005c573cada32634a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Launcher
