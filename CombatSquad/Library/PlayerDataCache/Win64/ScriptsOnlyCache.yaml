@@ -1488,7 +1488,7 @@ ScriptsOnlyBuild:
     className: PingProperty
   - hash:
       serializedVersion: 2
-      Hash: b44bac12451ffe75954bd7ac9dda5698
+      Hash: fd78a19d94a68ed7b92e1e2d9002b30e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Launcher
