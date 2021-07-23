@@ -1,18 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerSpawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static PlayerSpawner Instance;
+
+    private void Awake()
     {
-        
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public GameObject PlayerPrefab;
+    private GameObject player;
+
+    private void Start()
     {
-        
+        if (PhotonNetwork.IsConnected)
+        {
+            SpawnPlayer();
+        }
+    }
+
+    public void SpawnPlayer()
+    {
+        Transform spawnPoint = SpawnManager.Instance.SpawnPosition();
+
+        player = PhotonNetwork.Instantiate(PlayerPrefab.name, spawnPoint.position, spawnPoint.rotation);
     }
 }

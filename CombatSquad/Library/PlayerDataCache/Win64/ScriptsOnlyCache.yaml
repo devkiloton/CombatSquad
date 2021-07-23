@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - Gun
     - Launcher
     - PlayerController
+    - PlayerSpawner
     - RoomButton
     - SpawnManager
     - UIController
@@ -17,8 +18,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -84,6 +83,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 74
@@ -141,45 +142,49 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4260}
     - Class: 114
-      Script: {instanceID: 4756}
+      Script: {instanceID: 4758}
     - Class: 114
-      Script: {instanceID: 4870}
+      Script: {instanceID: 4872}
     - Class: 114
-      Script: {instanceID: 4892}
+      Script: {instanceID: 4894}
     - Class: 114
-      Script: {instanceID: 4950}
+      Script: {instanceID: 4952}
     - Class: 114
-      Script: {instanceID: 5292}
+      Script: {instanceID: 5294}
     - Class: 114
-      Script: {instanceID: 5330}
+      Script: {instanceID: 5332}
     - Class: 114
-      Script: {instanceID: 5504}
+      Script: {instanceID: 5506}
     - Class: 114
-      Script: {instanceID: 5652}
+      Script: {instanceID: 5654}
     - Class: 114
-      Script: {instanceID: 5958}
-    - Class: 114
-      Script: {instanceID: 5966}
+      Script: {instanceID: 5960}
     - Class: 114
       Script: {instanceID: 5968}
     - Class: 114
-      Script: {instanceID: 6230}
+      Script: {instanceID: 5970}
     - Class: 114
-      Script: {instanceID: 6296}
+      Script: {instanceID: 6232}
     - Class: 114
-      Script: {instanceID: 6382}
+      Script: {instanceID: 6246}
     - Class: 114
-      Script: {instanceID: 6538}
+      Script: {instanceID: 6298}
     - Class: 114
-      Script: {instanceID: 7020}
+      Script: {instanceID: 6384}
     - Class: 114
-      Script: {instanceID: 7024}
+      Script: {instanceID: 6540}
     - Class: 114
-      Script: {instanceID: 7368}
+      Script: {instanceID: 7022}
     - Class: 114
-      Script: {instanceID: 7490}
+      Script: {instanceID: 7026}
     - Class: 114
-      Script: {instanceID: 7774}
+      Script: {instanceID: 7156}
+    - Class: 114
+      Script: {instanceID: 7370}
+    - Class: 114
+      Script: {instanceID: 7492}
+    - Class: 114
+      Script: {instanceID: 7776}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -246,23 +251,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2752}
     - Class: 114
+      Script: {instanceID: 2946}
+    - Class: 114
       Script: {instanceID: 4206}
     - Class: 114
-      Script: {instanceID: 4870}
+      Script: {instanceID: 4752}
     - Class: 114
-      Script: {instanceID: 4950}
+      Script: {instanceID: 4872}
     - Class: 114
-      Script: {instanceID: 5504}
+      Script: {instanceID: 4952}
     - Class: 114
-      Script: {instanceID: 5652}
+      Script: {instanceID: 5506}
     - Class: 114
-      Script: {instanceID: 5958}
+      Script: {instanceID: 5654}
     - Class: 114
-      Script: {instanceID: 6244}
+      Script: {instanceID: 5960}
     - Class: 114
-      Script: {instanceID: 7154}
+      Script: {instanceID: 6246}
     - Class: 114
-      Script: {instanceID: 7762}
+      Script: {instanceID: 7156}
+    - Class: 114
+      Script: {instanceID: 7370}
+    - Class: 114
+      Script: {instanceID: 7764}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1174,6 +1185,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
     className: SmoothSyncMovement
+  - hash:
+      serializedVersion: 2
+      Hash: d2e890fa595d33c5b63b34cd1b1aa6b5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerSpawner
   - hash:
       serializedVersion: 2
       Hash: 77aaaaa51f7a8d8ff333a879741e47d2
