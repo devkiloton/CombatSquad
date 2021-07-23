@@ -337,6 +337,7 @@
 "Assets/Assets/Scripts/Gun.cs"
 "Assets/Assets/Scripts/Launcher.cs"
 "Assets/Assets/Scripts/PlayerController.cs"
+"Assets/Assets/Scripts/PlayerSpawner.cs"
 "Assets/Assets/Scripts/RoomButton.cs"
 "Assets/Assets/Scripts/SpawnManager.cs"
 "Assets/Assets/Scripts/UIController.cs"
