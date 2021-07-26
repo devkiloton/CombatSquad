@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public Gun[] AllGuns;
     private int selectedGun;
     private float muzzleCounter;
+    public GameObject PlayerHitImpact;
 
     private void Start()
     {
@@ -195,13 +196,23 @@ public class PlayerController : MonoBehaviourPunCallbacks
     {
         Ray ray = cam.ViewportPointToRay(new Vector3(.5f,.5f,0f));
         ray.origin = cam.transform.position;
+
         if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            GameObject bulletImpactObj = Instantiate(bulletImpact, hit.point + (hit.normal * 0.002f), Quaternion.LookRotation(hit.normal));
-            Destroy(bulletImpactObj, 10f);
+        {   
+            if(hit.collider.gameObject.tag == "Player")
+            {
+                PhotonNetwork.Instantiate(PlayerHitImpact.name, hit.point, Quaternion.identity);
+                hit.collider.gameObject.GetPhotonView().RPC("DealDamage", RpcTarget.All, photonView.Owner.NickName);
+            }
+            else
+            {
+                GameObject bulletImpactObj = Instantiate(bulletImpact, hit.point + (hit.normal * 0.002f), Quaternion.LookRotation(hit.normal));
+                Destroy(bulletImpactObj, 10f);
+            }
         }
 
         shotCounter = AllGuns[selectedGun].timeBetweenShots;
+
         heatCounter += AllGuns[selectedGun].heatPerShot;
 
         if(heatCounter >= maxHeat)
@@ -213,6 +224,13 @@ public class PlayerController : MonoBehaviourPunCallbacks
         AllGuns[selectedGun].gunMuzzleFlashes.SetActive(true);
         muzzleCounter = muzzleDisplayTime;
     }
+
+    [PunRPC]
+    public void DealDamage(string damager)
+    {
+        Debug.Log("I've been hit by" + damager);
+    }
+
     private void LateUpdate()
     {
         if (photonView.IsMine)
