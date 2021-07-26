@@ -228,7 +228,14 @@ public class PlayerController : MonoBehaviourPunCallbacks
     [PunRPC]
     public void DealDamage(string damager)
     {
-        Debug.Log("I've been hit by" + damager);
+        TakeDamager(damager);
+    }
+
+    public void TakeDamager(string damager)
+    {
+        Debug.Log(photonView.Owner.NickName + "I've been hit by" + damager);
+
+        gameObject.SetActive(false);
     }
 
     private void LateUpdate()
