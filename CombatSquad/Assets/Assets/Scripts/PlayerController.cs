@@ -201,7 +201,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         {   
             if(hit.collider.gameObject.tag == "Player")
             {
-                PhotonNetwork.Instantiate(PlayerHitImpact.name, hit.point, Quaternion.identity);
+                //PhotonNetwork.Instantiate(PlayerHitImpact.name, hit.point, Quaternion.identity);
                 hit.collider.gameObject.GetPhotonView().RPC("DealDamage", RpcTarget.All, photonView.Owner.NickName);
             }
             else
@@ -233,9 +233,10 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     public void TakeDamager(string damager)
     {
-        Debug.Log(photonView.Owner.NickName + "I've been hit by" + damager);
-
-        gameObject.SetActive(false);
+        if (photonView.IsMine)
+        {
+            PlayerSpawner.Instance.Die();
+        }
     }
 
     private void LateUpdate()
