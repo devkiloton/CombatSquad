@@ -6,12 +6,15 @@ using TMPro;
 
 public class UIController : MonoBehaviour
 {
-    public TMP_Text overheatedMessage;
     public static UIController Instance;
+
+    public TMP_Text overheatedMessage;
     public Slider WeaponTempSlider;
 
     public GameObject DeathScreen;
     public TMP_Text DeathText;
+
+    public Slider SliderHealth;
 
     private void Awake()
     {

@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         Cursor.lockState = CursorLockMode.Locked;
         cam = Camera.main;
         UIController.Instance.WeaponTempSlider.maxValue = maxHeat;
+        UIController.Instance.SliderHealth.maxValue = MaxHealth;
         SwitchGun();
         CurrentHealth = MaxHealth;
         //Transform position = SpawnManager.Instance.SpawnPosition();
@@ -155,6 +156,9 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
             UIController.Instance.WeaponTempSlider.value = heatCounter;
 
+            UIController.Instance.SliderHealth.value = CurrentHealth;
+
+
             if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f)
             {
                 selectedGun++;
@@ -241,9 +245,12 @@ public class PlayerController : MonoBehaviourPunCallbacks
         {
             CurrentHealth -= damageAmount;
 
-            if(CurrentHealth <= 0)
+
+            if (CurrentHealth <= 0)
             {
                 CurrentHealth = 0;
+                //CurrentHealth = MaxHealth;
+                UIController.Instance.SliderHealth.value = CurrentHealth;
 
                 PlayerSpawner.Instance.Die(damager);
             }
