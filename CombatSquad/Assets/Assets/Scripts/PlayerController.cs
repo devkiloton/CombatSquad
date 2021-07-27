@@ -235,7 +235,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     {
         if (photonView.IsMine)
         {
-            PlayerSpawner.Instance.Die();
+            PlayerSpawner.Instance.Die(damager);
         }
     }
 

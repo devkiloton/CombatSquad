@@ -104,9 +104,9 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1514}
+      Script: {instanceID: 1512}
     - Class: 114
-      Script: {instanceID: 1516}
+      Script: {instanceID: 1514}
     - Class: 114
       Script: {instanceID: 1606}
     - Class: 114
@@ -249,7 +249,7 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1516}
+      Script: {instanceID: 1514}
     - Class: 114
       Script: {instanceID: 2554}
     - Class: 114
@@ -1203,7 +1203,7 @@ ScriptsOnlyBuild:
     className: SmoothSyncMovement
   - hash:
       serializedVersion: 2
-      Hash: 7f0b299ceb4be1b4db4106081b9af9fa
+      Hash: ccb7279b844789c87c53f88a7afe2c7e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerSpawner
@@ -1995,7 +1995,7 @@ ScriptsOnlyBuild:
     className: PhotonTeamsManager
   - hash:
       serializedVersion: 2
-      Hash: a6350a057cc715d64e6d036a8ab21e3c
+      Hash: 73f325b8b96fd99144fd5c85186d295f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIController

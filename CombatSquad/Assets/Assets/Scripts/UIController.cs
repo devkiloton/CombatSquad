@@ -10,6 +10,9 @@ public class UIController : MonoBehaviour
     public static UIController Instance;
     public Slider WeaponTempSlider;
 
+    public GameObject DeathScreen;
+    public TMP_Text DeathText;
+
     private void Awake()
     {
         Instance = this;
