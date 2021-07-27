@@ -48,6 +48,9 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private float muzzleCounter;
     public GameObject PlayerHitImpact;
 
+    public int MaxHealth = 100;
+    private int CurrentHealth;
+
     private void Start()
     {
         groundCheckPoint = gameObject.GetComponentInChildren<Transform>().Find("GroundCheckPoint");
@@ -58,6 +61,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         cam = Camera.main;
         UIController.Instance.WeaponTempSlider.maxValue = maxHeat;
         SwitchGun();
+        CurrentHealth = MaxHealth;
         //Transform position = SpawnManager.Instance.SpawnPosition();
         //transform.position = position.position;
         //transform.rotation = position.rotation;
@@ -202,7 +206,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
             if(hit.collider.gameObject.tag == "Player")
             {
                 //PhotonNetwork.Instantiate(PlayerHitImpact.name, hit.point, Quaternion.identity);
-                hit.collider.gameObject.GetPhotonView().RPC("DealDamage", RpcTarget.All, photonView.Owner.NickName);
+                hit.collider.gameObject.GetPhotonView().RPC("DealDamage", RpcTarget.All, photonView.Owner.NickName, AllGuns[selectedGun].ShotDamage);
             }
             else
             {
@@ -226,16 +230,23 @@ public class PlayerController : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void DealDamage(string damager)
+    public void DealDamage(string damager, int damageAmount)
     {
-        TakeDamager(damager);
+        TakeDamage(damager, damageAmount);
     }
 
-    public void TakeDamager(string damager)
+    public void TakeDamage(string damager, int damageAmount)
     {
         if (photonView.IsMine)
         {
-            PlayerSpawner.Instance.Die(damager);
+            CurrentHealth -= damageAmount;
+
+            if(CurrentHealth <= 0)
+            {
+                CurrentHealth = 0;
+
+                PlayerSpawner.Instance.Die(damager);
+            }
         }
     }
 

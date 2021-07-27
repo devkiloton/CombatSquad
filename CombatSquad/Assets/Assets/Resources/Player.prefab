@@ -147,6 +147,7 @@ MonoBehaviour:
   isAutomatic: 0
   timeBetweenShots: 0.1
   heatPerShot: 2
+  ShotDamage: 15
 --- !u!1 &1849985460932873415
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,6 +346,7 @@ MonoBehaviour:
   - {fileID: 1849985460575682409}
   - {fileID: 1849985461581370479}
   PlayerHitImpact: {fileID: 3422800228285073789, guid: 4ae459fe666599d4a894f8a6d0a1c97d, type: 3}
+  MaxHealth: 100
 --- !u!143 &1849985461112688019
 CharacterController:
   m_ObjectHideFlags: 0
@@ -518,6 +520,7 @@ MonoBehaviour:
   isAutomatic: 1
   timeBetweenShots: 0.35
   heatPerShot: 5
+  ShotDamage: 35
 --- !u!1 &1849985461773946449
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,6 +600,7 @@ MonoBehaviour:
   isAutomatic: 1
   timeBetweenShots: 0.1
   heatPerShot: 1
+  ShotDamage: 25
 --- !u!1 &1849985462269486065
 GameObject:
   m_ObjectHideFlags: 0
