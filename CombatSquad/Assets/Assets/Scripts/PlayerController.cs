@@ -53,6 +53,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     public Animator Anim;
     public GameObject PlayerModel;
+    public Transform ModelGunPoint;
+    public Transform GunHolder;
 
     private void Start()
     {
@@ -71,6 +73,12 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
             UIController.Instance.WeaponTempSlider.maxValue = maxHeat;
             UIController.Instance.SliderHealth.maxValue = MaxHealth;
+        }
+        else
+        {
+            GunHolder.parent = ModelGunPoint;
+            GunHolder.localPosition = Vector3.zero;
+            GunHolder.localRotation = Quaternion.identity;
         }
         //Transform position = SpawnManager.Instance.SpawnPosition();
         //transform.position = position.position;
