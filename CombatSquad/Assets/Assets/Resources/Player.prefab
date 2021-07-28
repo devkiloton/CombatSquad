@@ -388,6 +388,7 @@ MonoBehaviour:
   PlayerHitImpact: {fileID: 3422800228285073789, guid: 4ae459fe666599d4a894f8a6d0a1c97d, type: 3}
   MaxHealth: 100
   Anim: {fileID: 2131322923652428472}
+  PlayerModel: {fileID: 2131322923662984355}
 --- !u!143 &1849985461112688019
 CharacterController:
   m_ObjectHideFlags: 0
@@ -786,6 +787,11 @@ PrefabInstance:
 --- !u!4 &2131322923662956673 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1046021142964628577, guid: 38074321d88bbe3438955d413494dac3, type: 3}
+  m_PrefabInstance: {fileID: 1375792820180727008}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2131322923662984355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1046021142964596803, guid: 38074321d88bbe3438955d413494dac3, type: 3}
   m_PrefabInstance: {fileID: 1375792820180727008}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2131322923662984469 stripped

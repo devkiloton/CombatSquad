@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private int CurrentHealth;
 
     public Animator Anim;
+    public GameObject PlayerModel;
 
     private void Start()
     {
@@ -61,10 +62,16 @@ public class PlayerController : MonoBehaviourPunCallbacks
         groundLayers = LayerMask.GetMask("Ground");
         Cursor.lockState = CursorLockMode.Locked;
         cam = Camera.main;
-        UIController.Instance.WeaponTempSlider.maxValue = maxHeat;
-        UIController.Instance.SliderHealth.maxValue = MaxHealth;
         SwitchGun();
         CurrentHealth = MaxHealth;
+
+        if (photonView.IsMine)
+        {
+            PlayerModel.SetActive(false);
+
+            UIController.Instance.WeaponTempSlider.maxValue = maxHeat;
+            UIController.Instance.SliderHealth.maxValue = MaxHealth;
+        }
         //Transform position = SpawnManager.Instance.SpawnPosition();
         //transform.position = position.position;
         //transform.rotation = position.rotation;
