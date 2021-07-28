@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public int MaxHealth = 100;
     private int CurrentHealth;
 
+    public Animator Anim;
+
     private void Start()
     {
         groundCheckPoint = gameObject.GetComponentInChildren<Transform>().Find("GroundCheckPoint");
@@ -187,6 +189,9 @@ public class PlayerController : MonoBehaviourPunCallbacks
                 }
             }
 
+            Anim.SetBool("grounded", isGrounded);
+            Anim.SetFloat("speed", moveDir.magnitude);
+
             if (Input.GetKey(KeyCode.Escape))
             {
                 Cursor.lockState = CursorLockMode.None;
@@ -209,7 +214,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
         {   
             if(hit.collider.gameObject.tag == "Player")
             {
-                //PhotonNetwork.Instantiate(PlayerHitImpact.name, hit.point, Quaternion.identity);
+                PhotonNetwork.Instantiate(PlayerHitImpact.name, hit.point, Quaternion.identity);
                 hit.collider.gameObject.GetPhotonView().RPC("DealDamage", RpcTarget.All, photonView.Owner.NickName, AllGuns[selectedGun].ShotDamage);
             }
             else

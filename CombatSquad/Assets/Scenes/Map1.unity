@@ -708,7 +708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerPrefab: {fileID: 1849985461112688020, guid: 737ae97ebea6ec44eb19f0c6d9882a80, type: 3}
-  DeathEffect: {fileID: 5067841351167980694, guid: 26bbba9d1c2dfc543a8f000124026a4d, type: 3}
+  DeathEffect: {fileID: 1052341242847720832, guid: ab981ef3afe8fa243a2a6d1e3ee85516, type: 3}
   RespawnTime: 5
 --- !u!4 &527593162
 Transform:
