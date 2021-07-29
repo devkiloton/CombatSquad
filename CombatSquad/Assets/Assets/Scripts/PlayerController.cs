@@ -64,7 +64,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
         groundLayers = LayerMask.GetMask("Ground");
         Cursor.lockState = CursorLockMode.Locked;
         cam = Camera.main;
-        SwitchGun();
+        //SwitchGun();
+        photonView.RPC("SetGun", RpcTarget.All, selectedGun);
         CurrentHealth = MaxHealth;
 
         if (photonView.IsMine)
@@ -183,7 +184,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
                 {
                     selectedGun = AllGuns.Length - 1;
                 }
-                SwitchGun();
+                //SwitchGun();
+                photonView.RPC("SetGun", RpcTarget.All, selectedGun);
             }
             else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f)
             {
@@ -192,7 +194,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
                 {
                     selectedGun = 0;
                 }
-                SwitchGun();
+                //SwitchGun();
+                photonView.RPC("SetGun", RpcTarget.All, selectedGun);
             }
 
             for (int i = 0; i < AllGuns.Length; i++)
@@ -222,12 +225,12 @@ public class PlayerController : MonoBehaviourPunCallbacks
     }
     private void Shoot()
     {
-        Ray ray = cam.ViewportPointToRay(new Vector3(.5f,.5f,0f));
+        Ray ray = cam.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
         ray.origin = cam.transform.position;
 
         if (Physics.Raycast(ray, out RaycastHit hit))
-        {   
-            if(hit.collider.gameObject.tag == "Player")
+        {
+            if (hit.collider.gameObject.tag == "Player")
             {
                 PhotonNetwork.Instantiate(PlayerHitImpact.name, hit.point, Quaternion.identity);
                 hit.collider.gameObject.GetPhotonView().RPC("DealDamage", RpcTarget.All, photonView.Owner.NickName, AllGuns[selectedGun].ShotDamage);
@@ -243,7 +246,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
         heatCounter += AllGuns[selectedGun].heatPerShot;
 
-        if(heatCounter >= maxHeat)
+        if (heatCounter >= maxHeat)
         {
             heatCounter = maxHeat;
             overHeated = true;
@@ -283,15 +286,25 @@ public class PlayerController : MonoBehaviourPunCallbacks
         {
             cam.transform.position = viewPoint.position;
             cam.transform.rotation = viewPoint.rotation;
-        }    
+        }
     }
     private void SwitchGun()
     {
-        foreach(Gun gun in AllGuns)
+        foreach (Gun gun in AllGuns)
         {
             gun.gameObject.SetActive(false);
         }
         AllGuns[selectedGun].gameObject.SetActive(true);
         AllGuns[selectedGun].gunMuzzleFlashes.SetActive(false);
+    }
+
+    [PunRPC]
+    public void SetGun(int gunToSwitch)
+    {
+        if(gunToSwitch < AllGuns.Length)
+        {
+            selectedGun = gunToSwitch;
+            SwitchGun();
+        }
     }
 }
