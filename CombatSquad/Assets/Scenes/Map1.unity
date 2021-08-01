@@ -456,6 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Instance: {fileID: 307365317}
+  AllPlayers: []
 --- !u!4 &307365318
 Transform:
   m_ObjectHideFlags: 0
