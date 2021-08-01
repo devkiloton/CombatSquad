@@ -30,11 +30,11 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
     public override void OnEnable()
     {
-
+        PhotonNetwork.AddCallbackTarget(this);
     }
 
     public override void OnDisable()
     {
-
+        PhotonNetwork.RemoveCallbackTarget(this);
     }
 }
