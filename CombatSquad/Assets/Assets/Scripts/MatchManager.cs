@@ -28,6 +28,10 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
         {
             SceneManager.LoadScene(0);
         }
+        else
+        {
+            NewPlayerSend(PhotonNetwork.NickName);
+        }
     }
 
     private void Update()
@@ -86,7 +90,9 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
     public void NewPlayerReceive(object[] dataReceived)
     {
-
+        PlayerInfo player = new PlayerInfo((string)dataReceived[0], (int)dataReceived[1],
+                                            (int)dataReceived[2], (int)dataReceived[3]);
+        AllPlayers.Add(player);
     }
 
     public void ListPlayersSend()
