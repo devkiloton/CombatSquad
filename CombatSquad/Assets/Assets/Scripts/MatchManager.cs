@@ -69,9 +69,19 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
         PhotonNetwork.RemoveCallbackTarget(this);
     }
 
-    public void NewPlayerSend()
+    public void NewPlayerSend(string username)
     {
+        object[] package = new object[4];
+        package[0] = username;
+        package[1] = PhotonNetwork.LocalPlayer.ActorNumber;
+        package[2] = 0;
+        package[3] = 0;
 
+        PhotonNetwork.RaiseEvent(
+            (byte)EventCodes.NewPlayer, package,
+            new RaiseEventOptions { Receivers = ReceiverGroup.MasterClient },
+            new SendOptions { Reliability = true }
+            );
     }
 
     public void NewPlayerReceive(object[] dataReceived)
