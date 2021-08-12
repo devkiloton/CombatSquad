@@ -93,16 +93,55 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
         PlayerInfo player = new PlayerInfo((string)dataReceived[0], (int)dataReceived[1],
                                             (int)dataReceived[2], (int)dataReceived[3]);
         AllPlayers.Add(player);
+
+        ListPlayersSend();
     }
 
     public void ListPlayersSend()
     {
+        object[] package = new object[AllPlayers.Count];
+
+        for(int i = 0; i < AllPlayers.Count; i++)
+        {
+            object[] piece = new object[4];
+
+            piece[0] = AllPlayers[i].Name;
+            piece[1] = AllPlayers[i].Actor;
+            piece[2] = AllPlayers[i].Kills;
+            piece[3] = AllPlayers[i].Deaths;
+
+            package[i] = piece;
+        }
+
+        PhotonNetwork.RaiseEvent(
+            (byte)EventCodes.ListPlayer, package,
+            new RaiseEventOptions { Receivers = ReceiverGroup.All },
+            new SendOptions { Reliability = true }
+            );
 
     }
 
     public void ListPlayersReceive(object[] dataReceived)
     {
+        AllPlayers.Clear();
 
+        for(int i = 0; i < dataReceived.Length; i++)
+        {
+            object[] piece = (object[])dataReceived[i];
+
+            PlayerInfo player = new PlayerInfo(
+                (string)piece[0],
+                (int)piece[1],
+                (int)piece[2],
+                (int)piece[3]
+                );
+            AllPlayers.Add(player);
+
+            if(PhotonNetwork.LocalPlayer.ActorNumber == player.Actor)
+            {
+                index = i;
+            }
+        }
     }
     public void UpdateStatesSend()
     {
