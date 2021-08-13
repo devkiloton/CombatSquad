@@ -8,7 +8,7 @@ using ExitGames.Client.Photon;
 
 public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
 {
-    public MatchManager Instance;
+    public static MatchManager Instance;
     public enum EventCodes : byte
     {
         NewPlayer,
@@ -17,7 +17,7 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
     }
     public List<PlayerInfo> AllPlayers = new List<PlayerInfo>();
     private int index;
-    private void Awake()
+    public void Awake()
     {
         Instance = this;
     }
@@ -143,14 +143,42 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
             }
         }
     }
-    public void UpdateStatesSend()
+    public void UpdateStatesSend(int actorSending, int statToUpdate, int amountToChange)
     {
+        object[] package = new object[] { actorSending, statToUpdate, amountToChange };
 
+        PhotonNetwork.RaiseEvent(
+            (byte)EventCodes.UpdateStat,
+            package,
+            new RaiseEventOptions { Receivers = ReceiverGroup.All },
+            new SendOptions { Reliability = true }
+            );
     }
 
     public void UpdateStatsReceive(object[] dataReceived)
     {
+        int actor = (int)dataReceived[0];
+        int statType = (int)dataReceived[1];
+        int amount = (int)dataReceived[2];
 
+        for(int i = 0; i < AllPlayers.Count; i++)
+        {
+            if(AllPlayers[i].Actor == actor)
+            {
+                switch (statType)
+                {
+                    case 0: //kills
+                        AllPlayers[i].Kills += amount;
+                        Debug.Log("player" + AllPlayers[i].Name + " : kills" + AllPlayers[i].Kills);
+                        break;
+                    case 1: //deaths
+                        AllPlayers[i].Deaths += amount;
+                        Debug.Log("player" + AllPlayers[i].Name + " : Deaths" + AllPlayers[i].Deaths);
+                        break;
+                }
+                break;
+            }
+        }
     }
 }
 

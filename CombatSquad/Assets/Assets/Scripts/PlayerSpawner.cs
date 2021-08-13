@@ -42,6 +42,8 @@ public class PlayerSpawner : MonoBehaviour
 
         //SpawnPlayer();
 
+        MatchManager.Instance.UpdateStatesSend(PhotonNetwork.LocalPlayer.ActorNumber, 1, 1);
+
         if(player != null)
         {
             StartCoroutine(DieCo());
