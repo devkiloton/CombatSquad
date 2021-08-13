@@ -2009,7 +2009,7 @@ ScriptsOnlyBuild:
     className: PhotonTeamsManager
   - hash:
       serializedVersion: 2
-      Hash: 1e419a06ee991b2525ea33978d9f13dd
+      Hash: 82c2a5c7e854268a40c7ee554ae595a4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIController

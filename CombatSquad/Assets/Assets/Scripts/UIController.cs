@@ -16,6 +16,9 @@ public class UIController : MonoBehaviour
 
     public Slider SliderHealth;
 
+    public TMP_Text KillsText;
+    public TMP_Text DeathsText;
+
     private void Awake()
     {
         Instance = this;
