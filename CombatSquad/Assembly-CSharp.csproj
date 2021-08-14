@@ -72,6 +72,7 @@
     <Compile Include="Assets\Photon\PhotonLibs\WebSocket\WebSocket.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\NamePickGui.cs" />
+    <Compile Include="Assets\Assets\Scripts\LeaderboardPlayer.cs" />
     <Compile Include="Assets\Assets\Scripts\Launcher.cs" />
     <Compile Include="Assets\Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\IgnoreUiRaycastWhenInactive.cs" />
@@ -82,7 +83,6 @@
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\Assets\Scripts\MatchManager.cs" />
     <Compile Include="Assets\Assets\Scripts\UIController.cs" />
-    <Compile Include="Assets\Assets\Scripts\LeaderboardPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
