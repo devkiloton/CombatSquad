@@ -195,6 +195,11 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
                     UpdateStatsDisplay();
                 }
 
+                if(UIController.Instance.leaderboard.activeInHierarchy)
+                {
+                    ShowLeaderboard();
+                }
+
                 break;
             }
         }
@@ -227,7 +232,9 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
         UIController.Instance.leaderboardPlayerDisplay.gameObject.SetActive(false);
 
-        foreach(PlayerInfo player in AllPlayers)
+        List<PlayerInfo> sorted = sortPlayers(AllPlayers);
+
+        foreach(PlayerInfo player in sorted)
         {
             LeaderboardPlayer newPlayerDisplay = Instantiate(UIController.Instance.leaderboardPlayerDisplay,
                                                              UIController.Instance.leaderboardPlayerDisplay.transform.parent);
@@ -237,6 +244,30 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
             LboardPlayers.Add(newPlayerDisplay);
         }
+    }
+
+    private List<PlayerInfo> sortPlayers(List<PlayerInfo> players)
+    {
+        List < PlayerInfo > sorted = new List<PlayerInfo>();
+        while(sorted.Count < players.Count)
+        {
+            int highest = -1;
+            PlayerInfo selectedPlayer = players[0];
+
+            foreach(PlayerInfo player in players)
+            {
+                if (!sorted.Contains(player))
+                {
+                    if(player.Kills > highest)
+                    {
+                        selectedPlayer = player;
+                        highest = player.Kills;
+                    }
+                }
+            }
+            sorted.Add(selectedPlayer);
+        }
+        return sorted;
     }
 }
 
