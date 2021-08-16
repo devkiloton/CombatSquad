@@ -1974,7 +1974,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: fc2269a0d10b91077aedcb303779ba11
+      Hash: 5766a592e225355ae46e0ae6246ea20e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MatchManager
@@ -2022,7 +2022,7 @@ ScriptsOnlyBuild:
     className: PhotonTeamsManager
   - hash:
       serializedVersion: 2
-      Hash: 4bce3fa948f91e11a32acad88a0e5dfb
+      Hash: 85109a35a3cecbd05ad1570fce8bc3b6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIController
