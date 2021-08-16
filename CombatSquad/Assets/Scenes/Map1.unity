@@ -724,6 +724,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AllPlayers: []
+  KillsToWin: 2
+  EndScreenCam: {fileID: 452096442}
+  state: 0
+  WaitAfterEnding: 5
 --- !u!4 &307365318
 Transform:
   m_ObjectHideFlags: 0

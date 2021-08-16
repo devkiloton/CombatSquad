@@ -30,7 +30,7 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public int KillsToWin = 3;
     public Transform EndScreenCam;
     public GameState state = GameState.Waiting;
-    public float WaitAfterEnding = 15f;
+    public float WaitAfterEnding = 5f;
 
     public void Awake()
     {
@@ -173,6 +173,7 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
                 index = i - 1;
             }
         }
+        StateCheck();
     }
     public void UpdateStatesSend(int actorSending, int statToUpdate, int amountToChange)
     {
@@ -314,8 +315,42 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
             if(PhotonNetwork.IsMasterClient && state != GameState.Ending)
             {
                 state = GameState.Ending;
+                ListPlayersSend();
             }
         }
+    }
+
+    private void StateCheck()
+    {
+        if(state == GameState.Ending)
+        {
+            EndGame();
+        }
+    }
+
+    private void EndGame()
+    {
+        state = GameState.Ending;
+
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.DestroyAll();
+        }
+
+        UIController.Instance.EndScreen.SetActive(true);
+        ShowLeaderboard();
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        StartCoroutine(EndCo());
+    }
+
+    private IEnumerator EndCo()
+    {
+        yield return new WaitForSeconds(WaitAfterEnding);
+
+        PhotonNetwork.AutomaticallySyncScene = false;
+        PhotonNetwork.LeaveRoom();
     }
 }
 
