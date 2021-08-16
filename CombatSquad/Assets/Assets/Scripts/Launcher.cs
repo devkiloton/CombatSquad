@@ -29,7 +29,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public GameObject NicknameInputScreen;
     public TMP_InputField NicknameInputField;
-    private bool hasSetNickname;
+    public static bool hasSetNickname;
 
     public string LevelToPlay;
     public GameObject StartButton;
@@ -51,6 +51,8 @@ public class Launcher : MonoBehaviourPunCallbacks
 #if UNITY_EDITOR
         RoomTestButton.SetActive(true);
 #endif
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private void CloseMenus()

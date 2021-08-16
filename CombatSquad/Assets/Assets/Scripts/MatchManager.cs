@@ -342,6 +342,10 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        Camera.main.transform.position = EndScreenCam.position;
+        Camera.main.transform.rotation = EndScreenCam.rotation;
+
         StartCoroutine(EndCo());
     }
 
