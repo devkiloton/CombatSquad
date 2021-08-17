@@ -55,12 +55,18 @@ public class PlayerSpawner : MonoBehaviour
         PhotonNetwork.Instantiate(DeathEffect.name, player.transform.position, Quaternion.identity);
 
         PhotonNetwork.Destroy(player);
+
+        player = null;
+
         UIController.Instance.DeathScreen.SetActive(true);
 
         yield return new WaitForSeconds(RespawnTime);
 
         UIController.Instance.DeathScreen.SetActive(false);
-
-        SpawnPlayer();
+        if(MatchManager.Instance.state == MatchManager.GameState.Playing && player == null)
+        {
+            SpawnPlayer();
+        }
+        
     }
 }

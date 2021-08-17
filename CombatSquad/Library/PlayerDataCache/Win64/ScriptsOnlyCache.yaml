@@ -21,8 +21,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -107,9 +105,9 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1514}
+      Script: {instanceID: 1512}
     - Class: 114
-      Script: {instanceID: 1516}
+      Script: {instanceID: 1514}
     - Class: 114
       Script: {instanceID: 1606}
     - Class: 114
@@ -260,7 +258,7 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1516}
+      Script: {instanceID: 1514}
     - Class: 114
       Script: {instanceID: 2554}
     - Class: 114
@@ -1974,7 +1972,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: 5766a592e225355ae46e0ae6246ea20e
+      Hash: b5c7fdd89e6689da82412ac6be303d59
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MatchManager
