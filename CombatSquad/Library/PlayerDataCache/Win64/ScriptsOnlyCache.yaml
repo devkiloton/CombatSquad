@@ -21,6 +21,8 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
+    PhotonUnityNetworking.Editor.dll:
+    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -93,8 +95,6 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
-      Script: {instanceID: 0}
-    - Class: 89
       Script: {instanceID: 0}
     - Class: 90
       Script: {instanceID: 0}
@@ -2079,7 +2079,7 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
-      Hash: b5c7fdd89e6689da82412ac6be303d59
+      Hash: 6737ecb5231bef9227398789ebc18abd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MatchManager
@@ -2127,7 +2127,7 @@ ScriptsOnlyBuild:
     className: PhotonTeamsManager
   - hash:
       serializedVersion: 2
-      Hash: 85109a35a3cecbd05ad1570fce8bc3b6
+      Hash: 94530426fe6fff38f2bfd9d2a3eb543e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIController
