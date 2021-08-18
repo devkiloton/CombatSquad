@@ -34,6 +34,9 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
     public float WaitAfterEnding = 5f;
     public bool Perpetual;
 
+    public float MatchLength = 180f;
+    private float currentMatchTime;
+
     public void Awake()
     {
         Instance = this;
@@ -51,6 +54,8 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
             state = GameState.Playing;
         }
+
+        SetupTimer();
     }
 
     private void Update()
@@ -65,7 +70,27 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
             {
                 ShowLeaderboard();
             }
-        }   
+        }
+
+        if(currentMatchTime > 0f && state == GameState.Playing)
+        {
+            currentMatchTime -= Time.deltaTime;
+
+            if(currentMatchTime <= 0f)
+            {
+                currentMatchTime = 0f;
+
+                state = GameState.Ending;
+
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    ListPlayersSend();
+
+                    StateCheck();
+                }
+            }
+            UpdateTimerDisplay();
+        }
     }
 
     public void OnEvent(EventData photonEvent)
@@ -414,6 +439,24 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
         UpdateStatsDisplay();
 
         PlayerSpawner.Instance.SpawnPlayer();
+
+        SetupTimer();
+    }
+
+    public void SetupTimer()
+    {
+        if(MatchLength > 0)
+        {
+            currentMatchTime = MatchLength;
+            UpdateTimerDisplay();
+        }
+    }
+
+    public void UpdateTimerDisplay()
+    {
+        var timeToDisplay = System.TimeSpan.FromSeconds(currentMatchTime);
+
+        UIController.Instance.Clock.text = timeToDisplay.Minutes.ToString("00") + ":" + timeToDisplay.Seconds.ToString("00");
     }
 }
 
