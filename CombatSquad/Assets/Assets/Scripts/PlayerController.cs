@@ -58,6 +58,11 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     public Material[] AllSkins;
 
+    public float AdsSpeed = 5f;
+
+    public AudioSource FootstepSlow;
+    public AudioSource FootstepFast;
+
     private void Start()
     {
         groundCheckPoint = gameObject.GetComponentInChildren<Transform>().Find("GroundCheckPoint");
@@ -108,10 +113,28 @@ public class PlayerController : MonoBehaviourPunCallbacks
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 activeMoveSpeed = runSpeed;
+
+                if(!FootstepFast.isPlaying && moveDir != Vector3.zero)
+                {
+                    FootstepFast.Play();
+                    FootstepSlow.Stop();
+                }
             }
             else
             {
                 activeMoveSpeed = moveSpeed;
+
+                if(!FootstepSlow.isPlaying && moveDir != Vector3.zero)
+                {
+                    FootstepFast.Stop();
+                    FootstepSlow.Play();
+                }
+            }
+
+            if(moveDir == Vector3.zero || !isGrounded)
+            {
+                FootstepFast.Stop();
+                FootstepSlow.Stop();
             }
 
             float yVel = movement.y;
@@ -214,6 +237,16 @@ public class PlayerController : MonoBehaviourPunCallbacks
             Anim.SetBool("grounded", isGrounded);
             Anim.SetFloat("speed", moveDir.magnitude);
 
+            if (Input.GetMouseButton(1))
+            {
+                cam.fieldOfView =Mathf.Lerp(cam.fieldOfView, AllGuns[selectedGun].AdsZoom, AdsSpeed * Time.deltaTime);
+            }
+            else
+            {
+                cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, 60f, AdsSpeed * Time.deltaTime);
+
+            }
+
             if (Input.GetKey(KeyCode.Escape))
             {
                 Cursor.lockState = CursorLockMode.None;
@@ -258,6 +291,9 @@ public class PlayerController : MonoBehaviourPunCallbacks
         }
         AllGuns[selectedGun].gunMuzzleFlashes.SetActive(true);
         muzzleCounter = muzzleDisplayTime;
+
+        AllGuns[selectedGun].ShotSound.Stop();
+        AllGuns[selectedGun].ShotSound.Play();
     }
 
     [PunRPC]

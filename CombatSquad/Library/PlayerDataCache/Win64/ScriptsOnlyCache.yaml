@@ -21,9 +21,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PhotonTransformViewEditor
-    - Photon.Pun.PhotonViewInspector
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -1670,7 +1667,7 @@ ScriptsOnlyBuild:
     className: ThirdPersonCharacter
   - hash:
       serializedVersion: 2
-      Hash: 3ce54f16a188ab926c17a62e9114b513
+      Hash: bfc1b56def04c47c03c006652c6a3287
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -1952,7 +1949,7 @@ ScriptsOnlyBuild:
     className: RegionListView
   - hash:
       serializedVersion: 2
-      Hash: 41b04a700672d5ef9cc7e936642fc980
+      Hash: e384b214ca79ca7f87da648a75594b70
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Gun
