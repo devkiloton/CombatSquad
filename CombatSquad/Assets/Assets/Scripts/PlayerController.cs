@@ -56,6 +56,8 @@ public class PlayerController : MonoBehaviourPunCallbacks
     public Transform ModelGunPoint;
     public Transform GunHolder;
 
+    public Material[] AllSkins;
+
     private void Start()
     {
         groundCheckPoint = gameObject.GetComponentInChildren<Transform>().Find("GroundCheckPoint");
@@ -83,7 +85,9 @@ public class PlayerController : MonoBehaviourPunCallbacks
         }
         //Transform position = SpawnManager.Instance.SpawnPosition();
         //transform.position = position.position;
-        //transform.rotation = position.rotation;
+        //transform.rotation = position.rotation;          
+        PlayerModel.GetComponent<Renderer>().material = AllSkins[photonView.Owner.ActorNumber % AllSkins.Length];
+        
     }
 
     private void Update()
