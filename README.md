@@ -40,11 +40,9 @@
 
 ![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/search_room.jpg)
 
-- Also, if you were invited by your friends to play a match, you can click at "FIND ROOM" and search for your friends room and then, join into the match.
+- Also, if you were invited by your friends to play a match, you can click at "FIND ROOM" and search for your friends room and then, go straight to the match.
 
 ![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/find_room.jpg)
-
-![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/room_name.jpg)
 
 ![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/gameplay.jpg)
 
@@ -55,6 +53,9 @@
 ![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/weapon_overheated.jpg)
 
 ![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/round_over.jpg)
+
+- If you kill 10 players in less of 3 minutes or if you killed biggest number of players
+  in 3 minutes, you win the game and after 15 second the game will start a new match.
 
 # Check the scripts
 [ATTENTION: CODES WITHOUT REFACTORING YET!]

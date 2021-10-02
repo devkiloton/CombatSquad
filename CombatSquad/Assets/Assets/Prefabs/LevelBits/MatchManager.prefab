@@ -47,5 +47,6 @@ MonoBehaviour:
   KillsToWin: 2
   EndScreenCam: {fileID: 0}
   state: 0
-  WaitAfterEnding: 5
+  WaitAfterEnding: 10
   Perpetual: 1
+  MatchLength: 180

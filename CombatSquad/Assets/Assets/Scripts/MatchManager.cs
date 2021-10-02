@@ -29,7 +29,7 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
         Ending
     }
 
-    public int KillsToWin = 3;
+    public int KillsToWin = 11;
     public Transform EndScreenCam;
     public GameState state = GameState.Waiting;
     public float WaitAfterEnding = 5f;
@@ -90,8 +90,9 @@ public class MatchManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
                     state = GameState.Ending;
 
-                    ListPlayersSend();
                     StateCheck();
+
+                    ListPlayersSend();
                 }
 
                 UpdateTimerDisplay();
