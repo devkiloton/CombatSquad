@@ -2,45 +2,66 @@
 
 ![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/grid.jpg)
 
+- Combat Squad is an online multiplayer FPS where you can choose your nickname, create your own room and play with your friends.
+
 # Where can I play?
 
-- [You can download the apk here!](https://github.com/devkiloton/SpaceOdyssey/raw/master/space_odissey_apk.apk)
+- [HERE!](https://devkiloton.itch.io/combat-squad)
 
 # Why? 
 
-- I used this game to improve my knowledge on Unity Engine, C# language skills and discover how the mobile game development works!
+- I was wanting to develop an online multiplayer game and this project is the result.
 
-- Also, you can use this project as you wish, be for study or commercial use. Just be careful with the arts, the sounds and their royalties! 
+- Also, you can use this project as you wish, be for study or commercial use. Just be careful with the assets, the sounds and their royalties! 
 
 - Any ideas or suggestions:
 
-  Email-me: dev.kiloton@gmail.com
+  Email-me: devkiloton@gmail.com
 
 # How does it really works?
 
-![alt](https://github.com/devkiloton/SpaceOdyssey/blob/master/SpaceOdyssey/Assets/DefaultIcon/GitHubREADME/Screenshot_20210707-091625.jpg)
+- First of all, you are connected to network.
 
-- Space Odyssey is an Android game based on C# where the player needs to swipe the finger
+![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/connecting_to_network.jpg)
 
-  on the screen to deviate a spaceship from white balls without crashing on asteroids.
+- Once connected and inside the lobby, you define your nickname.
 
-![alt](https://github.com/devkiloton/SpaceOdyssey/blob/master/SpaceOdyssey/Assets/DefaultIcon/GitHubREADME/Screenshot_20210707-091600.jpg)
+![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/nickname.jpg)
 
-- If you don't touch the screen, the velocity is reduced and you can acess the main menu with the white engine if you want. 
+- You can choose if you will create a new room or if you will find one.
 
-![alt](https://github.com/devkiloton/SpaceOdyssey/blob/master/SpaceOdyssey/Assets/DefaultIcon/GitHubREADME/Screenshot_20210707-093429.jpg)
+![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/main_menu.jpg)
 
-- When you crash on asteroids or white balls, the ranking scene will be loaded and you will can enter with your username that will be saved into a Json file!
+- If you want to create a room, you just need to give a name for this room and start the game.
 
-![alt](https://github.com/devkiloton/SpaceOdyssey/blob/master/SpaceOdyssey/Assets/DefaultIcon/GitHubREADME/Screenshot_20210707-091518.jpg)
+![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/room_name.jpg)
 
-![alt](https://github.com/devkiloton/SpaceOdyssey/blob/master/SpaceOdyssey/Assets/DefaultIcon/GitHubREADME/2021-07-07.png)
+![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/creating_room.jpg)
+
+![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/search_room.jpg)
+
+- Also, if you were invited by your friends to play a match, you can click at "FIND ROOM" and search for your friends room and then, join into the match.
+
+![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/find_room.jpg)
+
+![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/room_name.jpg)
+
+![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/gameplay.jpg)
+
+![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/match_menu.jpg)
+
+![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/death_screen.jpg)
+
+![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/weapon_overheated.jpg)
+
+![alt](https://github.com/devkiloton/CombatSquad/blob/master/Combat_Squad_README_files/round_over.jpg)
 
 # Check the scripts
-
-- [Click here](https://github.com/devkiloton/SpaceOdyssey/tree/master/SpaceOdyssey/Assets/Scripts)
+[ATTENTION: CODES WITHOUT REFACTORING YET!]
+- [Click here](https://github.com/devkiloton/CombatSquad/tree/master/CombatSquad/Assets/Assets/Scripts)
 
 # Final considerations
 
-- I've learned some things that I'll apply on future projects.
-- dedicated to asteroids in our universe that makes an odyssey for spacial missions.
+- It was a quite exhaustive project, sometimes hard because of the difficulty of
+  how to implement the multiplayer mechanics, but in general it was cool, but in the
+  future I want to do better.
